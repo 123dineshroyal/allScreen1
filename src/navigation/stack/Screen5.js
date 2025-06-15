@@ -44,7 +44,7 @@ const Screen5 = () => {
               </View>
             </TouchableOpacity>
         </View>
-
+        <ScrollView>
         <View style={styles.airlineContainer}>
           <View style={styles.airlineData}>
             <View style={styles.airlineDetails}>
@@ -57,19 +57,15 @@ const Screen5 = () => {
             </View>
 
             <View style={styles.ailineLending}>
-              <TouchableOpacity>
-                <Icons name="plane-departure" size={18} color='black' style={styles.airlineLogo1}></Icons>
-              </TouchableOpacity>
+             <Image source={require('../Images/plain1.png')} style={styles.airlineLogo1}></Image>
+
               <View>
                 <Text style={styles.route}>America JS</Text>
                 <Text style={styles.routeTime}>Mon, 17mar - 23:50</Text>
               </View>
-              <TouchableOpacity>
-               <Icons name="arrow-right" size={25} color='#e91e63'></Icons>
-              </TouchableOpacity> 
-              <TouchableOpacity>
-               <Icons name="plane-arrival" size={18} color='black' style={styles.airlineLogo1}></Icons>
-              </TouchableOpacity>
+              <Image source={require('../Images/arrow.png')} style={styles.arrow}></Image>
+                        
+              <Image source={require('../Images/plain2.png')} style={styles.airlineLogo1}></Image>
               <View>
                 <Text style={styles.route}>Bangalore IND</Text>
                 <Text style={styles.routeTime}>Mon, 18mar - 5:00</Text>
@@ -92,7 +88,7 @@ const Screen5 = () => {
             <View style={styles.paymentData}>
               <Text style={styles.paymentDetails}>Payment details:</Text>
               <TouchableOpacity style={styles.timeLogo}>
-                <Icon name="watch-later" color='black' size={24}></Icon>
+                <Icon name="access-time" color='black' size={24}></Icon>
                 <Text style={styles.time}>6:29</Text>
               </TouchableOpacity>
               
@@ -182,6 +178,7 @@ const Screen5 = () => {
             </View>
           </View>
         </View>
+        </ScrollView>
       </View>
     </SafeAreaView>
 
@@ -194,7 +191,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5F5F5',
   },
   container:{
-    //marginHorizontal:15,
     elevation: 2,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 1 },
@@ -254,6 +250,11 @@ const styles = StyleSheet.create({
     elevation: 6,
     paddingHorizontal:20,
   },
+  arrow:{
+    height:17,
+    width:35,
+    marginTop:10
+  },
   airlineData:{
     textAlign:'left',
     paddingTop:10,
@@ -285,7 +286,9 @@ const styles = StyleSheet.create({
     marginBottom:10
   },
   airlineLogo1:{
-    marginTop:9
+    marginTop:13,
+    height:17,
+    width:20
   },
   route:{
     fontSize:15,
@@ -454,7 +457,8 @@ const styles = StyleSheet.create({
   payButtonContainer:{
     marginLeft:-15,
     marginTop:-20,
-    paddingVertical:10
+    paddingVertical:10,
+    marginBottom:100
   },
   payButton:{
     backgroundColor: '#26A69A',

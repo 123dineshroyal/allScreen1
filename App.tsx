@@ -12,6 +12,7 @@ import {
 
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
+import { PaperProvider, TextInput} from 'react-native-paper';
 import Screen1 from './src/navigation/stack/Screen1';
 import Screen2 from './src/navigation/stack/Screen2';
 import Screen3 from './src/navigation/stack/Screen3';
@@ -21,7 +22,7 @@ import Screen5 from './src/navigation/stack/Screen5';
 const Stack = createStackNavigator();
 
 function App(): React.JSX.Element {
-  console.log('123');
+
   return (
    <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown:false}}>

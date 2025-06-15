@@ -73,19 +73,15 @@ const Screen4 = () => {
              </View> 
 
              <View style={styles.ailineLending}>
-              <TouchableOpacity>
-                <Icons name="plane-departure" size={18} color='black' style={styles.airlineLogo1}></Icons>
-              </TouchableOpacity>
+             <Image source={require('../Images/plain1.png')} style={styles.airlineLogo1}></Image>
               <View>
                 <Text style={styles.route}>America JS</Text>
                 <Text style={styles.routeTime}>Mon, 17mar - 23:50</Text>
               </View>
-              <TouchableOpacity>
-               <Icons name="arrow-right" size={25} color='#e91e63'></Icons>
-              </TouchableOpacity> 
-              <TouchableOpacity>
-               <Icons name="plane-arrival" size={18} color='black' style={styles.airlineLogo1}></Icons>
-              </TouchableOpacity>
+              
+              <Image source={require('../Images/arrow.png')} style={styles.arrow}></Image>
+          
+               <Image source={require('../Images/plain2.png')} style={styles.airlineLogo1}></Image>
               <View>
                 <Text style={styles.route}>Bangalore IND</Text>
                 <Text style={styles.routeTime}>Mon, 18mar - 5:00</Text>
@@ -302,6 +298,11 @@ const styles = StyleSheet.create({
     height:70,
     width:120
   },
+  arrow:{
+    height:17,
+    width:35,
+    marginTop:10
+  },
   airlineData:{
     textAlign:'left',
     paddingTop:10,
@@ -334,7 +335,9 @@ const styles = StyleSheet.create({
     fontWeight:'400'
   },
   airlineLogo1:{
-    marginTop:9
+    marginTop:13,
+    height:17,
+    width:20
   },
   seat:{
     flexDirection:'row',

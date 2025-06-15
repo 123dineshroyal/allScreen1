@@ -371,7 +371,7 @@ qrCode:{
     position:'absolute',
     left:50,
     backgroundColor:'#e1e3e1',
-    bottom:440
+    bottom:335
    },
    circle2:{
     width:30,
@@ -380,7 +380,7 @@ qrCode:{
     marginLeft:10,
     position:'absolute',
     right:50,
-    bottom:440, 
+    bottom:335, 
     backgroundColor:'#e1e3e1'
    }
 });

@@ -9,6 +9,7 @@ import {
   Image,
   ImageBackground
 } from 'react-native';
+import { useState } from 'react'; 
 import { PaperProvider, TextInput} from 'react-native-paper';
 import * as React from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -18,6 +19,9 @@ import { useNavigation } from '@react-navigation/native';
 const Screen3 = () => {
 
   const navigation = useNavigation();
+
+  const [date, setDate] = useState('26/05/2023');
+  const [time, setTime] = useState('08.30');
 
   return (
     <SafeAreaView style={styles.mainController}>
@@ -83,7 +87,7 @@ const Screen3 = () => {
             </View>  
           </View>
         <View style={styles.airportContainer}>
-            <Text style={styles.airportName}>Madras International{'\n'}Meenambakkam Airport</Text>
+            <Text style={styles.airportName}>Madras International{'\n'}Meenambakkam{'\n'} Airport</Text>
 
             
             <Text style={styles.airportName1}>Kempegowda{'\n'}International Airport</Text>
@@ -93,41 +97,38 @@ const Screen3 = () => {
         </View>
        
 
-          <PaperProvider>
+          
              <View style={styles.dateTimeContainer}>
-                <View style={styles.box}>
-                  <Text style={styles.label}>Date</Text>
-                  <View style={styles.inputRow}>
-                     <Icons name="calendar" size={18} color="black" />
-                     <Text style={styles.value}>26/05/2023</Text>
-                  </View>
-                </View>
+                <TextInput
+                  label='Date'
+                  mode='outlined'
+                  value={date}
+                  editable={false}
+                  outlineColor="#f0f0f0"
+                  theme={{ roundness: 7 }} 
+                  left={<TextInput.Icon icon ={()=><Icon name="calendar-month" size={23} color="black" />}/>}
+                  style={styles.dateTimeLabel}
+                  />
+
+                  <TextInput
+                  label='Time'
+                  mode='outlined'
+                  value={time}
+                  editable={false}
+                  outlineColor="#f0f0f0"
+                  theme={{ roundness: 7 }} 
+                  left={<TextInput.Icon icon ={()=><Icon name="access-time" size={23} color="black" />}/>}
+                   style={styles.dateTimeLabel}
+                  />
              </View>
             
-          </PaperProvider>
-          {/*<View style={styles.dateTimeItem}>
-            <Text style={styles.dateTimeLabel}>Date</Text>
-            <View style={styles.dateTimeValue}>
-              <Icons name="calendar" size={18} color="black" />
-              <Text style={styles.dateTimeText}>26/05/2023</Text>
-            </View>
-          </View>*/}
-
-          <View style={styles.dateTimeItem}>
-            <Text style={styles.dateTimeLabel}>Time</Text>
-            <View style={styles.dateTimeValue}>
-              <Icons name="stopwatch" size={18} color="black" />
-              <Text style={styles.dateTimeText}>08:30</Text>
-            </View>
-          </View>
-        </View>
-
+         
         <View style={styles.priceContainer}>
           <Text style={styles.priceLabel}>Price</Text>
           <Text style={styles.priceValue}>₹</Text>
           <Text style={styles.priceAmount}>5,700</Text>
         </View>
-      
+      </View>
 
     </SafeAreaView>
   );
@@ -262,29 +263,12 @@ const styles = StyleSheet.create({
     paddingTop: 0,
     paddingHorizontal: 80,
   },
-  airlineData:{
-    marginLeft:-50
-  },
-  airlineData1:{
-    marginRight:-50
-  },
   routePath: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent:'center',
   },
 
-  routeLine: {
-    flex: 2,
-    height: 2,
-    width: 80,
-    borderStyle: 'dotted',
-    borderColor: 'white',
-    borderTopWidth: 2,
-  },
-  routeAirplane: {
-    transform: [{ rotate: '180deg' }],
-  },
   availableFlights: {
     color: 'white',
     textAlign: 'center',
@@ -293,7 +277,7 @@ const styles = StyleSheet.create({
     paddingBottom: 20
   },
   airlineDetails: {
-    backgroundColor: 'white',
+    backgroundColor: '#FFFFFF',
     borderRadius: 15,
     marginHorizontal: 23,
     marginVertical: 25,
@@ -315,61 +299,40 @@ const styles = StyleSheet.create({
     height: 40,
   },
   routeContainer: {
-   //flexDirection: 'column',
-    //justifyContent: 'space-between',
     marginBottom: 20,
-    //alignItems: 'flex-start',
     borderBottomWidth: 2,
     borderBottomColor: '#f0f0f0',
-   // marginLeft:-30,
-    //marginRight:-40,
-   // paddingBottom: 20,
     alignItems:'center',
     marginTop:60,
 
   },
-  routePoint: {
-    alignItems: 'center',
-    flex: 1
-  },
+ 
   circle:{
     width: 40,
     height: 40,
     borderRadius: 30,
-    backgroundColor: 'white',
+    backgroundColor: '#fff',
     justifyContent: 'center',
     alignItems: 'center',
     shadowColor: '#000',
     shadowOffset: {
-      width: 0,
-      height: 10,
+      width: 3,
+      height: 5,
     },
-    shadowOpacity: 0.50,
-    shadowRadius: 20,
-    elevation:20, 
+    shadowOpacity: 0.75,
+    shadowRadius: 4,
+    elevation:10, 
   },
   routeCode1: {
     color: '#CC1B00',
     fontWeight: 'bold',
     fontSize: 18,
   },
-  routeDot1: {
-    backgroundColor: '#666',
-    width: 10,
-    height: 10,
-    borderRadius: 5,
-    marginVertical: 5,
-  },
-  airportData:{
-    marginLeft:-60
-  },
   airportName: {
     fontSize: 12,
     color: '#999999',
     fontWeight:'400',
     textAlign:'left'
-    
-  
   },
   airportName1: {
     fontSize: 12,
@@ -377,89 +340,25 @@ const styles = StyleSheet.create({
     fontWeight:'400',
     textAlign:'right'
   },
-
-  routePathContainer: {
-    flex: 1,
-    height: 30,
-    justifyContent: 'center',
-    alignItems: 'center',
-    position: 'relative',
-
-  },
-  routePath1: {
-    height: 1,
-    backgroundColor: 'black',
-    width: '100%',
-    position: 'absolute',
-    borderStyle: 'dashed',
-    borderWidth: 1,
-    borderColor: '#ccc',
-
-  
-  },
-  planeIconContainer: {
-    padding: 5,
-    //borderRadius: 15,
-    //elevation: 10,
-    //shadowColor: 'black',
-    //shadowOpacity: 0.1,
-    //shadowRadius: 10,
-    // transform: [{ rotate: '-400deg' }],
-
-
-  },
   dateTimeContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     marginBottom: 20,
     borderBottomWidth: 2,
     borderBottomColor: '#f0f0f0',
     paddingBottom: 20
   },
-  dateTimeItem: {
-    flex: 1,
-    marginHorizontal: 5,
-  },
   dateTimeLabel: {
-    fontSize: 12,
+    fontSize: 13,
     color: '#999',
-    marginBottom: 5
+    marginBottom: 5,
+    marginHorizontal:10,
+    borderRadius:10,
+   width:'42%',
+  backgroundColor:'white',
+  height:40
   },
-  dateTimeValue: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderWidth: 1,
-    borderColor: '#ddd',
-    borderRadius: 5,
-    paddingVertical: 8,
-    paddingHorizontal: 10
-  },
-  box:{
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 8,
-    paddingVertical: 6,
-    paddingHorizontal: 12,
-    width: 120,
-    justifyContent: 'center',
-  },
-  label: {
-    fontSize: 12,
-    color: '#666',
-    marginBottom: 4,
-  },
-   inputRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  dateTimeText: {
-    fontSize: 14,
-    color: '#333',
-    marginLeft: 5
-  },
-   value: {
-    fontSize: 14,
-  },
+ 
   priceContainer: {
     alignItems: 'center',
     flexDirection: 'row',
