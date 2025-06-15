@@ -21,7 +21,7 @@ import Screen5 from './src/navigation/stack/Screen5';
 const Stack = createStackNavigator();
 
 function App(): React.JSX.Element {
-  
+  console.log('123');
   return (
    <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown:false}}>
@@ -32,6 +32,7 @@ function App(): React.JSX.Element {
         <Stack.Screen name='ScreenTask5' component={Screen5} options={{title:'ScreenTask5'}}></Stack.Screen>
       </Stack.Navigator>
    </NavigationContainer>
+
   );
 }
 
