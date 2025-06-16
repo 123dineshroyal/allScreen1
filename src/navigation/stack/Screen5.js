@@ -25,7 +25,7 @@ import { useNavigation } from '@react-navigation/native';
 const Screen5 = () => {
 
   const navigation = useNavigation();
-  const [upi, setUpi] = useState("123456789@ybl")
+  const [upi, setUpi] = useState("example@oksbi")
   
   return (
     <SafeAreaView style={styles.mainContainer}>
@@ -75,7 +75,7 @@ const Screen5 = () => {
 
           <View style={styles.seat}>
               <TouchableOpacity style={styles.seatDetails}>
-                <Icon name="airline-seat-recline-extra" color='black' size={24}></Icon>
+                 <Image source={require('../Images/seat.png')}  style={styles.seat2}></Image>
                 <Text>1 Seat</Text>
               </TouchableOpacity>
               <TouchableOpacity>
@@ -88,7 +88,7 @@ const Screen5 = () => {
             <View style={styles.paymentData}>
               <Text style={styles.paymentDetails}>Payment details:</Text>
               <TouchableOpacity style={styles.timeLogo}>
-                <Icon name="access-time" color='black' size={24}></Icon>
+                <Icon name="access-time" color='black' size={20}></Icon>
                 <Text style={styles.time}>6:29</Text>
               </TouchableOpacity>
               
@@ -98,7 +98,7 @@ const Screen5 = () => {
              <View style={styles.billContainer}>
               <View style={styles.seaterContain}>
                 <TouchableOpacity style={styles.seatLogo}>
-                <Icon name="airline-seat-recline-extra" color='black' size={16} style={{marginTop:3}}></Icon>
+                <Image source={require('../Images/seat.png')}  style={styles.seat3}></Image>
                 <Text style={styles.seat1}>Seater</Text>
                 </TouchableOpacity>
                 
@@ -164,7 +164,7 @@ const Screen5 = () => {
             <View style={styles.paymentType1}>
               <Text style={styles.upi}>UPI ID </Text>
               <TextInput
-               placeholder='Enter UPI ID'
+               placeholder='example@oksbi'
                style={styles.textInput}
                value={upi}
                onChangeText={setUpi}
@@ -248,7 +248,8 @@ const styles = StyleSheet.create({
     shadowColor: '#000',
     shadowRadius: 8,
     elevation: 6,
-    paddingHorizontal:20,
+    paddingLeft:29,
+    paddingRight:48
   },
   arrow:{
     height:17,
@@ -258,7 +259,7 @@ const styles = StyleSheet.create({
   airlineData:{
     textAlign:'left',
     paddingTop:10,
-    borderColor:'#e91e63',
+    borderColor:'#D4376F',
     borderBottomWidth:2,
     borderStyle:'dotted'
   },
@@ -266,19 +267,20 @@ const styles = StyleSheet.create({
     flexDirection:'row'
   },
   airlineLogo:{
-    height:70,
-    width:120
+    height:54,
+    width:121
   },
   airlineName:{
     left:15
   },
   airlineName1:{
     paddingTop:10,
-    fontWeight:'bold',
-    fontSize:15
+    fontWeight:'500',
+    fontSize:13
   },
   selectedSeat:{
-    fontWeight:300
+    fontWeight:'300',
+    fontSize:11
   },
   ailineLending:{
     flexDirection:'row',
@@ -286,17 +288,17 @@ const styles = StyleSheet.create({
     marginBottom:10
   },
   airlineLogo1:{
-    marginTop:13,
+    marginTop:8,
     height:17,
     width:20
   },
   route:{
-    fontSize:15,
-    fontWeight:'bold'
+    fontSize:12,
+    fontWeight:'700'
   },
   routeTime:{
-    fontSize:14,
-    fontWeight:'400'
+    fontSize:12,
+    fontWeight:'500'
   },
   seat:{
     flexDirection:'row',
@@ -304,23 +306,28 @@ const styles = StyleSheet.create({
     marginTop:15,
     marginBottom:15
   },
+ seat2:{
+  height:15,
+  width:15,
+ },
   seatDetails:{
     flexDirection:'row',
-    backgroundColor:'#8e9094',
+    backgroundColor:'#C7C7C7',
     borderRadius:20,
     justifyContent:'space-between',
     alignItems:'center',
     paddingHorizontal:7
   },
   viewDetails:{
-    fontSize:15,
-    fontWeight:'bold',
+    fontSize:12,
+    fontWeight:'500',
     textDecorationLine:'underline',
   },
   paymentContainer:{
-    marginTop:30,
+    marginTop:18,
     paddingRight:25,
-    paddingLeft:10
+    paddingLeft:11,
+    paddingTop:18
 
   },
   paymentData:{
@@ -329,24 +336,25 @@ const styles = StyleSheet.create({
     justifyContent:'space-between'
   },
   paymentDetails:{
-    fontSize:22,
-    fontWeight:'bold'
+    fontSize:18,
+    fontWeight:'500'
   },
   timeLogo:{
     flexDirection:'row'
   },
   time:{
-    fontSize:17,
-    fontWeight:'400'
+    fontSize:14,
+    fontWeight:'500'
   },
   ticket:{
-    fontSize:15,
+    fontSize:12,
     fontWeight:'700',
     paddingTop:10,
   },
-  icons:{
+  seat3:{
     height:10,
-    width:30
+    width:15,
+    marginTop:2
   },
   billContainer:{
     paddingVertical:10,
@@ -358,12 +366,12 @@ const styles = StyleSheet.create({
     justifyContent:'space-between'
   },
   seat1:{
-    fontSize:16,
+    fontSize:10,
     paddingBottom:-10,
-    fontWeight:'400'
+    fontWeight:'500'
   },
   price:{
-    fontSize:16,
+    fontSize:12,
     paddingBottom:7,
     fontWeight:'400'
   },
@@ -371,10 +379,15 @@ const styles = StyleSheet.create({
     flexDirection:'row',
     
   },
+  icons:{
+    height:15,
+    width:30,
+    marginLeft:10
+  },
   ticket1:{
-    fontSize:15,
+    fontSize:12,
     fontWeight:'700',
-    paddingTop:-10,
+    marginTop:-7
   },
   totalPriceContainer:{
     flexDirection:'row',
@@ -383,31 +396,34 @@ const styles = StyleSheet.create({
     alignItems:'center'
   },
   total:{
-    fontSize:19,
-    fontWeight:'bold'
+    fontSize:14,
+    fontWeight:'700'
   },
   totalPrice:{
-    fontSize:24,
-    fontWeight:'900'
+    fontSize:20,
+    fontWeight:'600'
   },
   promocodeContainer:{
-    //marginVertical:20,
-    paddingVertical:10
+    marginTop:25,
+    paddingVertical:10,
+    marginBottom:15
   },
   promoCode:{
     borderWidth:2,
     borderStyle:'dashed',
     padding:7,
-    fontSize:19,
-    fontWeight:'300',
+    fontSize:14,
+    fontWeight:'500',
     borderRadius:10,
-    borderColor:'#b8b9ba'
+    borderColor:'#b8b9ba',
+    paddingLeft:20
   },
   payWith:{
-    fontSize:20,
-    fontWeight:'600',
+    fontSize:18,
+    fontWeight:'500',
     paddingVertical:10,
-    paddingLeft:10
+    paddingLeft:10,
+    marginBottom:15
   },
   paymentModeContainer:{
     paddingVertical:7,
@@ -431,28 +447,26 @@ const styles = StyleSheet.create({
     marginBottom:10
   },
   paymentModeName:{
-    fontSize:15,
-    fontWeight:'500'
+    fontSize:12,
+    fontWeight:'500',
+    marginBottom:15
   },
   upi:{
-    fontSize:15,
+    fontSize:10,
     fontWeight:'500',
-    marginTop:-7
+    marginTop:-7,
+    paddingTop:8
   },
   textInput:{
     borderWidth: 1,
     borderColor: '#DDD',
     borderRadius: 4,
     marginTop:-7,
-    fontWeight:'300',
-    fontSize: 14,
-    textAlign:'center',
+    fontWeight:'400',
+    fontSize: 8,
     marginLeft:10,
     marginBottom:10,
     width:150,
-    paddingBottom:-1,
-    paddingTop:-1,
-  
   },
   payButtonContainer:{
     marginLeft:-15,

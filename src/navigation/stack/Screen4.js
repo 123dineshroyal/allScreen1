@@ -92,7 +92,7 @@ const Screen4 = () => {
 
              <View style={styles.seat}>
               <TouchableOpacity style={styles.seatDetails}>
-                <Icon name="airline-seat-recline-extra" color='black' size={24}></Icon>
+                  <Image source={require('../Images/seat.png')}  style={styles.seat1}></Image>
                 <Text>1 Seat</Text>
               </TouchableOpacity>
               <TouchableOpacity>
@@ -104,7 +104,7 @@ const Screen4 = () => {
                 <View style={styles.details1}>
                   <Text style={styles.passengerdetails}>Passenger details:</Text>
                   <TouchableOpacity style={styles.addPassengerButton}>
-                    <Icon name="add" size={20} color="#black" />
+                    <Icon name="add" size={15} color="#black" />
                     <Text style={styles.addPassenger}> Add Passenger</Text>
                    
                   </TouchableOpacity>
@@ -148,7 +148,6 @@ const Screen4 = () => {
                 <Text style={styles.inputLabel}>Country</Text>
                 <TouchableOpacity style={styles.dropdownInput}>
                   <Text style={styles.placeholderText}>Select Countery</Text>
-                  <Icon name='keyboard-arrow-down' color='black'></Icon>
                 </TouchableOpacity>
 
                  <Text style={styles.inputLabel}>Passport</Text>
@@ -247,7 +246,7 @@ const styles = StyleSheet.create({
   },
   airline:{
     flexDirection:'row',
-    justifyContent:'space-between'
+    justifyContent:'space-between',
   },
   routename:{
     color:'white',
@@ -284,19 +283,19 @@ const styles = StyleSheet.create({
   airlineContainer:{
     justifyContent:'space-between',
     backgroundColor:'white',
-   // marginHorizontal:20,
      shadowColor: '#000',
     shadowRadius: 8,
     elevation: 6,
-    paddingHorizontal:20,
-    marginBottom:110
+    marginBottom:110,
+    paddingLeft:29,
+    paddingRight:48
   },
   airlineDetails:{
     flexDirection:'row'
   },
   airlineLogo:{
-    height:70,
-    width:120
+    height:54,
+    width:121
   },
   arrow:{
     height:17,
@@ -306,7 +305,7 @@ const styles = StyleSheet.create({
   airlineData:{
     textAlign:'left',
     paddingTop:10,
-    borderColor:'#e91e63',
+    borderColor:'#D4376F',
     borderBottomWidth:2,
     borderStyle:'dotted'
   },
@@ -315,11 +314,12 @@ const styles = StyleSheet.create({
   },
   airlineName1:{
     paddingTop:10,
-    fontWeight:'bold',
-    fontSize:15
+    fontWeight:'500',
+    fontSize:13
   },
   selectedSeat:{
-    fontWeight:300
+    fontWeight:'300',
+    fontSize:11
   },
   ailineLending:{
     flexDirection:'row',
@@ -327,15 +327,15 @@ const styles = StyleSheet.create({
     marginBottom:10
   },
   route:{
-    fontSize:15,
-    fontWeight:'bold'
+    fontSize:12,
+    fontWeight:'500'
   },
   routeTime:{
-    fontSize:14,
-    fontWeight:'400'
+    fontSize:12,
+    fontWeight:'500'
   },
   airlineLogo1:{
-    marginTop:13,
+    marginTop:8,
     height:17,
     width:20
   },
@@ -346,17 +346,21 @@ const styles = StyleSheet.create({
     marginBottom:15
 
   },
+  seat1:{
+    height:15,
+    width:15
+  },
   seatDetails:{
     flexDirection:'row',
-    backgroundColor:'#8e9094',
+    backgroundColor:'#C7C7C7',
     borderRadius:20,
     justifyContent:'space-between',
     alignItems:'center',
     paddingHorizontal:7
   },
   viewDetails:{
-    fontSize:15,
-    fontWeight:'bold',
+    fontSize:12,
+    fontWeight:'500',
     textDecorationLine:'underline',
     
   },
@@ -366,12 +370,14 @@ const styles = StyleSheet.create({
     paddingVertical:5
   },
   passengerdetails:{
-    fontSize:20,
-    fontWeight:'bold'
+    fontSize:21,
+    fontWeight:'500',
+    fontFamily:'Satoshi'
   },
   addPassenger:{
-    fontSize:16,
-    fontWeight:'500'
+    fontSize:12,
+    fontWeight:'500',
+    fontFamily:'Satoshi'
   },
   addPassengerButton:{
     flexDirection:'row',
@@ -382,10 +388,11 @@ const styles = StyleSheet.create({
     justifyContent:'space-between',
   },
   inputLabel:{
-    fontSize: 17,
-    
+    fontSize: 12,
+    fontWeight:'500',
+    fontFamily:'Satoshi',
     paddingVertical:10,
-    fontWeight:'bold'
+    //fontWeight:'bold'
   },
   textInput:{
     borderWidth: 1,
@@ -393,15 +400,16 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     padding: 10,
     fontWeight:'500',
-    fontSize: 16,
+    fontSize: 14,
   },
    textInput1:{
     borderWidth: 1,
     borderColor: '#DDD',
     borderRadius: 4,
     padding: 10,
-    fontWeight:'300',
-    fontSize: 16,
+    fontWeight:'400',
+    fontSize: 14,
+    color:'#989898'
   },
   ageContainer:{
     flexDirection: 'row',
@@ -437,7 +445,7 @@ const styles = StyleSheet.create({
   },
   genderText:{
      marginLeft: 8,
-    fontSize: 16,
+    fontSize: 14,
     fontWeight:'500'
   },
   dropdownInput:{
@@ -450,16 +458,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   placeholderText:{
-    color: '#999',
-    fontSize: 16,
+    color: '#9E9E9E',
+    fontSize: 14,
+    fontWeight:'400'
   },
   contactSection:{
-    paddingVertical:20
+    paddingVertical:20,
+    marginBottom:10
   },
   contactTitle:{
-     fontSize: 22,
-    fontWeight: 'bold',
-    color: '#333',
+     fontSize: 18,
+    fontWeight: '500',
+    color: '#042F40',
   },
   priceHeader:{
     borderColor:'black',
@@ -484,24 +494,28 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   priceType:{
-    fontSize:17,
-    fontWeight:'200'
+    fontSize:14,
+    fontWeight:'500',
+    color:'#C7C7C7'
   },
   price:{
-     fontSize: 25,
-    fontWeight: '900',
-    color: '#333',
+     fontSize: 20,
+    fontWeight: '600',
+    color: '#191919',
   },
   confirmButton:{
     backgroundColor: '#26A69A',
     paddingVertical: 12,
     paddingHorizontal: 24,
-    borderRadius: 8,
+    borderRadius: 4,
+    height:46,
+    width:146
   },
   confirmButtonText:{
     color: 'white',
-    fontWeight: 'bold',
+    fontWeight: '700',
     fontSize: 16,
+    textAlign:'center'
   }
 });
 
