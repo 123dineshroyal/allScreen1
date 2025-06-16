@@ -16,7 +16,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import Icons from 'react-native-vector-icons/FontAwesome5';
 import { useNavigation } from '@react-navigation/native';
 
-const Screen3 = () => {
+const flightDetails = () => {
 
   const navigation = useNavigation();
 
@@ -27,12 +27,12 @@ const Screen3 = () => {
     <SafeAreaView style={styles.mainController}>
       <View style={styles.headerController}>
 
-        <TouchableOpacity style={styles.backButton} onPress={()=>{navigation.navigate('ScreenTask2')}}>
+        <TouchableOpacity style={styles.backButton} onPress={()=>{navigation.navigate('paymentDetails_Screen')}}>
           <Icons name="arrow-left" color='white' size={24}></Icons>
         </TouchableOpacity>
 
         <Text style={styles.headerTitle}>Flight Details</Text>
-        <TouchableOpacity style={styles.notificationButton} onPress={()=>{navigation.navigate('ScreenTask4')}}>
+        <TouchableOpacity style={styles.notificationButton} onPress={()=>{navigation.navigate('passengerDetails_Screen')}}>
           <Icon name="notifications" size={24} color='white'></Icon>
            <View style={styles.notification}><Text style={styles.notificationText}>1</Text></View>
         </TouchableOpacity>
@@ -387,4 +387,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default Screen3;
+export default flightDetails;

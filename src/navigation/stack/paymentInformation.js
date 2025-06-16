@@ -22,7 +22,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import Icons from 'react-native-vector-icons/FontAwesome5';
 import { useNavigation } from '@react-navigation/native';
 
-const Screen5 = () => {
+const paymentInformation = () => {
 
   const navigation = useNavigation();
   const [upi, setUpi] = useState("example@oksbi")
@@ -31,13 +31,13 @@ const Screen5 = () => {
     <SafeAreaView style={styles.mainContainer}>
       <View style={styles.container}>
         <View style={styles.headerContainer}>
-           <TouchableOpacity style={styles.backButton} onPress={()=>{navigation.navigate('ScreenTask4')}}>
+           <TouchableOpacity style={styles.backButton} onPress={()=>{navigation.navigate('passengerDetails_Screen')}}>
               <Icons name="arrow-left" color='white' size={24}></Icons>
             </TouchableOpacity>
 
             <Text style={styles.headerTitle}>Payment Details</Text>
 
-             <TouchableOpacity style={styles.notificationButton}>
+             <TouchableOpacity style={styles.notificationButton} onPress={()=>{navigation.navigate('sajpeYatra_Screen')}}>
               <Icon name="notifications" size={24} color='white'></Icon>
               <View style={styles.notification}>
                 <Text style={styles.notificationText}>1</Text>
@@ -487,4 +487,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Screen5;
+export default paymentInformation;

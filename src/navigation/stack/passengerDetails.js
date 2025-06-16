@@ -20,7 +20,7 @@ import Icons from 'react-native-vector-icons/FontAwesome5';
 import { useNavigation } from '@react-navigation/native';
 
 
-const Screen4 = () => {
+const passengerDetails = () => {
 
   const navigation = useNavigation();
 
@@ -39,7 +39,7 @@ const Screen4 = () => {
       <View style={styles.container}>
         <View style={styles.headerContainer}>
           
-            <TouchableOpacity style={styles.backButton} onPress={()=>{navigation.navigate('ScreenTask3')}}>
+            <TouchableOpacity style={styles.backButton} onPress={()=>{navigation.navigate('flightDetails_Screen')}}>
               <Icons name="arrow-left" color='white' size={24}></Icons>
             </TouchableOpacity>
             <View style={styles.details}>
@@ -51,7 +51,7 @@ const Screen4 = () => {
                 </TouchableOpacity>
               </View>
             </View>   
-            <TouchableOpacity style={styles.notificationButton} onPress={()=>{navigation.navigate('ScreenTask5')}}>
+            <TouchableOpacity style={styles.notificationButton} onPress={()=>{navigation.navigate('paymentInformation_Screen')}}>
               <Icon name="notifications" size={24} color='white'></Icon>
               <View style={styles.notification}>
                 <Text style={styles.notificationText}>1</Text>
@@ -519,4 +519,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Screen4;
+export default passengerDetails;

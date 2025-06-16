@@ -17,7 +17,7 @@ import Icons from 'react-native-vector-icons/FontAwesome5';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 
 
-const Screen2 = () => {
+const paymentDetails = () => {
 
   const navigation = useNavigation();
   
@@ -25,12 +25,12 @@ const Screen2 = () => {
     <SafeAreaView style={styles.container}>
      
       <View style={styles.header}>
-        <TouchableOpacity style={styles.backButton} onPress={()=>{navigation.navigate('ScreenTask1')}}>
+        <TouchableOpacity style={styles.backButton} onPress={()=>{navigation.navigate('searchResult_Screen')}}>
         <Icons name='arrow-left' color='white' size={24}></Icons>
         </TouchableOpacity>
 
         <Text style={styles.headerTitle}>Payment Details</Text>
-        <TouchableOpacity style={styles.notificationButton} onPress={()=>{navigation.navigate('ScreenTask3')}}>
+        <TouchableOpacity style={styles.notificationButton} onPress={()=>{navigation.navigate('flightDetails_Screen')}}>
           <Icon name='notifications' size={24} color='white'></Icon>
          <View style={styles.notification}><Text style={styles.notificationText}>1</Text></View>
         </TouchableOpacity>
@@ -385,4 +385,4 @@ qrCode:{
    }
 });
 
-export default Screen2;
+export default paymentDetails;

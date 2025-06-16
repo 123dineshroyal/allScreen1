@@ -35,7 +35,7 @@ const flightData = [
   }
 ]
 
-const Screen1 = () =>{
+const searchResult = () =>{
 
   const navigation = useNavigation()
 
@@ -49,7 +49,7 @@ const Screen1 = () =>{
         </TouchableOpacity >
          <Text style={styles.headerText}>Search Result</Text>
 
-         <TouchableOpacity style={styles.notificationButton} onPress={()=>{navigation.navigate('ScreenTask2')}}>
+         <TouchableOpacity style={styles.notificationButton} onPress={()=>{navigation.navigate('paymentDetails_Screen')}}>
           <Icon  name="notifications" size={24} color="white" ></Icon>
            <View style={styles.notification}><Text style={styles.notificationText}>1</Text></View>
          </TouchableOpacity>
@@ -395,4 +395,4 @@ const styles = StyleSheet.create({
    
 })
 
-export default Screen1;
+export default searchResult;
